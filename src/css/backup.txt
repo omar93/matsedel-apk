@@ -1,0 +1,9 @@
+  /*  100 delat på antal dagar, måste skrivas här 
+    ute för inne blir den hårdkodad
+    går säkert att fixa med ett custom attribute utifrån 
+    via js, ange antal dagar sen sätt höjd till (100 / X)
+
+food-search {
+    height: (100/7)vh;
+}
+*/

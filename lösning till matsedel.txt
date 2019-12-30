@@ -1,0 +1,8 @@
+implementera kalendern,
+1) gör att måndag är dag 0 ist för söndag som är 0
+2) om det är torsdag idag, current = torsdag, sen gör att onsdag = current -1 osv tills
+current är söndag som e sist, då e måndag current-7? sen när det är måndag visa den som current osv
+3)visa ba antal dagar som 7, alltså om idag är måndag, ha ba current + 6 som visas
+sen om det är onsdag ha current -2, +4 som dusplay? borde visa rätt antal dagar i veckan med korrekt
+datum
+4)fixa en db struktur, ska varje dag vara ett dokument? eller kanske varje vecka med en array i?
