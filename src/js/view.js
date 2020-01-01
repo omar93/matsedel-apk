@@ -1,18 +1,12 @@
 let settingsBtn = document.querySelector('#settings')
+let profile = document.querySelector('#profile')
+let expanded = false
 
-settingsBtn.addEventListener('click', e=> {
-    let foodView = document.getElementById('main')
-    let profileView = document.getElementById('profil')
-    profileView.style.zIndex = 1
-    foodView.style.zIndex = -1
-})
-
-let exitBtn = document.querySelector('#exit')
-
-exitBtn.addEventListener('click', e=> {
-    let foodView = document.getElementById('main')
-    let profileView = document.getElementById('profil')
-    profileView.style.zIndex = -1
-    foodView.style.zIndex = 1
-    settingsBtn.style.zIndex -2
+settingsBtn.addEventListener('click', e => {
+    if(!expanded) {
+        profile.style.zIndex = 2
+    } else {
+        profile.style.zIndex = -2
+    }
+    expanded = !expanded
 })

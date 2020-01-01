@@ -3,42 +3,40 @@ template.innerHTML = `
 <!--Start Message grid and layout-->
 <style>
   :host {
-    background-color:gold;
-    border: 1px solid black;
-    font-size: 120%;
     display: grid;
-    grid-template-rows: repeat(2, 50%);
-    grid-template-columns: 10% 90%;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 3fr 7fr;
     grid-template-areas:
     'day food'
-    'date food2';
+    'day food'
 }
-#day {grid-area: day;}
-#date {grid-area: date;}
-#food {grid-area: food;}
-#food2 {grid-area: food2;}
-
-.dayDate {
-  text-align: center; 
-  overflow: hidden;
+#food {
+  grid-area:food;
+  margin-left:20px;
+}
+#day {
+  grid-area: day;
+  margin-left:20%;
 }
 
-.foodText {
-  margin-left: 10%;
+.text {
+  font-size: 25px;
+  line-height: 30px;
 }
 
 </style>
 <!--End Message grid and layout-->
 
+<p id="day" class="text">
+  <span>mån</span>
+</p>
 
-                <p id="day" class="dayText dayDate">måndag</p>
-                <p id="date" class="dateText dayDate">33</p>
-                <p id="food" class="foodText">mat1</p>
-                <p id="food2" class="foodText">mat2</p>
-
+<p id="food" class="text">
+  <span>Lax</span>
+</p>
 
 `
-class FoodSearch extends window.HTMLElement {
+class FoodRow extends window.HTMLElement {
   constructor() {
     super()
     this.attachShadow({ mode: 'open' })
@@ -60,11 +58,10 @@ class FoodSearch extends window.HTMLElement {
   }
 
   connectedCallback() {
-    this._date.textContent = this._dateString()
+    // this._date.textContent = this._dateString()
   }
 
   disconnectedCallback() {
-    // console.log('mat borttagen')
   }
 
   _dateString() {
@@ -76,5 +73,5 @@ class FoodSearch extends window.HTMLElement {
   }
 }
 
-window.customElements.define('food-search', FoodSearch)
-module.exports = FoodSearch
+window.customElements.define('food-row', FoodRow)
+module.exports = FoodRow
