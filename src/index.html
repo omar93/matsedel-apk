@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Matsedel</title>
     <link rel="shortcut icon" href="./images/favicon.png">
@@ -9,25 +8,19 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta charset="utf-8">
 </head>
-
 <body>
-
     <div id="container" class="view">
         <div id="main"></div>
         <div id="menu">
             <div id="chooseFood">
                 <!--Drop down with typing box for the food-->
                 <p class="header">Välj maträtt</p>
-                <input list="food" id="foodList" class="input">
-                <datalist id="food">
-                    <option>Lax</option>
-                    <option>korv</option>
-                    <option>apa</option>
-                </datalist>
+                <input list="food" id="foodList" class="input" placeholder="Lax">
+                <datalist id="food"></datalist>
 
                 <!--Drop down for the addon-->
                 <p class="header">Välj tillbehör</p>
-                <input list="addon" id="addonList" class="input">
+                <input list="addon" id="addonList" class="input" placeholder="Potatis">
                 <datalist id="addon"></datalist><br>
 
                 <!--Drop down for the day-->

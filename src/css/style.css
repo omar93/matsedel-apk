@@ -63,6 +63,10 @@ select {
     background-color: white;
 }
 
+input {
+    font-size: 25px;
+}
+
 #submit {
     margin-top: 10%;
     background-color: #4CAF50; /* Green */
