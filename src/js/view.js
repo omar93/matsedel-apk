@@ -1,12 +1,12 @@
 let settingsBtn = document.querySelector('#settings')
-let profile = document.querySelector('#profile')
+let menu = document.querySelector('#menu')
 let expanded = false
 
 settingsBtn.addEventListener('click', e => {
     if(!expanded) {
-        profile.style.zIndex = 2
+        menu.style.zIndex = 2
     } else {
-        profile.style.zIndex = -2
+        menu.style.zIndex = -2
     }
     expanded = !expanded
 })

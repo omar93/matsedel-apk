@@ -24,6 +24,12 @@ template.innerHTML = `
   line-height: 30px;
 }
 
+@media only screen and (max-width: 1200px) {
+  .text {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
 </style>
 <!--End Message grid and layout-->
 

@@ -9,6 +9,7 @@
         'main'
         'weeks';
     }
+
     #weeks {
         grid-template-areas: weeks;
         border: none;
@@ -17,9 +18,8 @@
         flex-direction: row;
         justify-content: space-between;
     }
-    #weeks > * {
-        margin: 20px;
-    }
+    #weeks > * { margin: 20px; }
+    #weeks { border-top: #a8a5a2 1px solid; }
 
     #main {
         grid-area: main;
@@ -28,11 +28,6 @@
         height: 100%;
         display: flex;
         flex-direction: column;
-    }
-    #profile {
-        grid-area: main;
-        border: none;
-        z-index: -2;
     }
 
     img {
@@ -44,5 +39,25 @@
     food-row {
         height: 100%;
         border-bottom: #a8a5a2 1px solid;
+    }
+
+    food-row:nth-child(7) {
+        border: none;
+    }
+
+    #menu {
+        grid-area: main;
+        height: 100%;
+        width: 100%;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        z-index: -2;
+    }
+
+    #foodContainer > * {
+        font-size: 30px;
+        line-height: 30px;
+        width: 100%;
     }
 }
