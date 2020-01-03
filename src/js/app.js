@@ -1,5 +1,7 @@
+require('./factory')
 require('./firebaseInit')
 require('./food')
-require('./factory')
 require('./view')
 require('./getData')
+require('./setData')
+require('./test')
