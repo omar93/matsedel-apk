@@ -3,7 +3,7 @@ const db = firebase.firestore()
 
 const currentWeek = require('week')
 const currentYear = require('year')
-
+let days = ['mån','tis','ons','tor','fre','lör','sön']
 // Denna vecka
 let date = currentYear() + '-' + (currentWeek() + 1)
 
@@ -27,9 +27,9 @@ for (let i = 0; i < 2; i++) {
 // Hämtar veckans mat
 db.collection('weeks').doc(date).get().then(doc => {
     if (doc.exists) {
-        for (let i = 1; i < 8; i++) {
-            let foodRow = document.getElementById(i)
-            foodRow.setAttribute('food', doc.data()[i])
+        for (let i = 0; i < 7; i++) {
+            let foodRow = document.getElementById(days[i])
+            foodRow.setAttribute('food', doc.data().suggestions[i])
         }
     }
 })

@@ -113,19 +113,16 @@ class FoodRow extends window.HTMLElement {
     this._submit = this.shadowRoot.querySelector('#submit')
   }
 
-  static get observedAttributes() { return ['food', 'day', 'pic','font'] }
+  static get observedAttributes() { return ['food', 'day', 'omar','ali', 'ahmed', 'mamma', 'pappa'] }
 
   attributeChangedCallback(attr, oldVal, newVal) {
     if (attr === 'food') { this._food.textContent = newVal }
     if (attr === 'day') { this._day.textContent = newVal }
-    if (attr === '1') { this._id1.textContent = newVal }
-    if (attr === '2') { this._id2.textContent = newVal }
-    if (attr === '3') { this._id3.textContent = newVal }
-    if (attr === '4') { this._id4.textContent = newVal }
-    if (attr === '5') { this._id5.textContent = newVal }
-
-    // if (attr === 'font') { this._day.classList.add(newVal) }
-    //if (attr === 'pic') { this._pic.style.backgroundImage = `url(${newVal})` }
+    if (attr === 'omar') { this._omar.textContent = newVal }
+    if (attr === 'ali') { this._ali.textContent = newVal }
+    if (attr === 'ahmed') { this._ahmed.textContent = newVal }
+    if (attr === 'mamma') { this._mamma.textContent = newVal }
+    if (attr === 'pappa') { this._pappa.textContent = newVal }
   }
 
   connectedCallback() {
@@ -143,12 +140,6 @@ class FoodRow extends window.HTMLElement {
     this._mamma.addEventListener('click', this._getFoodText)
     this._pappa.addEventListener('click', this._getFoodText)   
     this._submit.addEventListener('click', e=> {
-      let active = this.shadowRoot.querySelectorAll('.active')
-      // if(active.length > 0) {
-      //   active[0].classList.remove('active')
-      //   console.log(active)
-      // }
-
     })  
   }
 

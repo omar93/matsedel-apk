@@ -5,41 +5,30 @@ const currentWeek = require('week')
 const currentYear = require('year')
 
 let date = (currentYear()+'-'+currentWeek()+2)
+let days = ['mån','tis','ons','tor','fre','lör','sön']
 
 db.collection('weeks').doc(date).get().then(doc => {
     if(doc.exists) {
-        let omar = doc.data().omar
-        for(let day in omar) {
-            console.log(day+':'+omar[day])
-            let day = document.getElementById(day)
-            console.log(day)
+        let map = {
+            omar: doc.data().omar,
+            ali: doc.data().ali,
+            ahmed: doc.data().ahmed,
+            mamma: doc.data().mamma,
+            pappa: doc.data().pappa
         }
+            for(let key in map) {
+                let subMap = map[key]
+                console.log('**********NAME**********')
+                console.log(key)    //person name
+                console.log(subMap) //person map
+                console.log('_______________________')
+                for(let day in subMap) {
+                    let currentDay = document.getElementById(day)
+                    console.log(day)    //day
+                    console.log(subMap[day])    //foood
+                    console.log('-------------------')
+                    currentDay.setAttribute(key,subMap[day])
+                }
+            }
     }
 })
-
-async function test() {
-    // let doc = await db.collection('weeks').doc(date).get()
-    // console.log('apa ' + doc.data())
-    
-    // for (let i = 0; i < 7; i++) {
-    //     let row = document.getElementById(i + 1)
-    //     setAttributes(row, {
-    //         'mån': doc.data().omar.mån
-    //     })
-        
-    //     for (let i = 0; i < 5; i++) {
-            
-    //         setAttributes(row, {
-    //             'mån': doc.data().omar.mån
-    //         })
-    //     }
-    // }
-    
-}
-test()
-
-function setAttributes (element, attributes) {
-    for (let attr in attributes) {
-      element.setAttribute(attr, attributes[attr])
-    }
-  }
