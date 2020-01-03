@@ -83,11 +83,11 @@ template.innerHTML = `
 </p>
 
 <div id="adminBox">
-  <span id="1" class="ruta"></span>
-  <span id="2" class="ruta"></span>
-  <span id="3" class="ruta"></span>
-  <span id="4" class="ruta"></span>
-  <span id="5" class="ruta"></span>
+  <span id="omar" class="ruta">lax</span>
+  <span id="ali" class="ruta">mos</span>
+  <span id="ahmed" class="ruta"></span>
+  <span id="mamma" class="ruta"></span>
+  <span id="pappa" class="ruta"></span>
 </div>
 <button id="submit">Submit</button>
 
@@ -97,7 +97,6 @@ class FoodRow extends window.HTMLElement {
   constructor() {
     super()
     this.classList.add('adminView')
-    this.classList.add('ruta')
     this.attachShadow({ mode: 'open' })
     this.shadowRoot.appendChild(template.content.cloneNode(true))
     this._day = this.shadowRoot.querySelector('#day')
@@ -105,11 +104,11 @@ class FoodRow extends window.HTMLElement {
     this._pic = this.shadowRoot.querySelector('#pic')
     this._date = this.shadowRoot.querySelector('#date')
 
-    this._id1 = this.shadowRoot.getElementById(1)
-    this._id2 = this.shadowRoot.getElementById(2)
-    this._id3 = this.shadowRoot.getElementById(3)
-    this._id4 = this.shadowRoot.getElementById(4)
-    this._id5 = this.shadowRoot.getElementById(5)
+    this._omar = this.shadowRoot.getElementById('omar')
+    this._ali = this.shadowRoot.getElementById('ali')
+    this._ahmed = this.shadowRoot.getElementById('ahmed')
+    this._mamma = this.shadowRoot.getElementById('mamma')
+    this._pappa = this.shadowRoot.getElementById('pappa')
 
     this._submit = this.shadowRoot.querySelector('#submit')
   }
@@ -138,24 +137,11 @@ class FoodRow extends window.HTMLElement {
   }
 
   _setListeners() {
-    this._id1.addEventListener('click', e => {
-      let row = e.target
-      let id = row.id
-      let x = document.getElementById(id)
-      console.log(x)
-      let active = this.shadowRoot.querySelectorAll('.active')
-      let current = active[0]
-      if (active.length >= 1) {
-        console.log(current)
-        current.classList.remove('active')
-      } else {
-        this.classList.add('active')
-      }
-    })
-    this._id2.addEventListener('click', this._getFoodText)
-    this._id3.addEventListener('click', this._getFoodText)
-    this._id4.addEventListener('click', this._getFoodText)
-    this._id5.addEventListener('click', this._getFoodText)   
+    this._omar.addEventListener('click', this._getFoodText)
+    this._ali.addEventListener('click', this._getFoodText)
+    this._ahmed.addEventListener('click', this._getFoodText)
+    this._mamma.addEventListener('click', this._getFoodText)
+    this._pappa.addEventListener('click', this._getFoodText)   
     this._submit.addEventListener('click', e=> {
       let active = this.shadowRoot.querySelectorAll('.active')
       // if(active.length > 0) {
@@ -167,9 +153,8 @@ class FoodRow extends window.HTMLElement {
   }
 
   _getFoodText(e) {
-
-
-
+    this.classList.toggle('active')
+    console.log(this.textContent)
   }
 
   _dateString() {

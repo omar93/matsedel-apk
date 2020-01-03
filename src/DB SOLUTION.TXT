@@ -1,3 +1,16 @@
 food row ska ha 2 views, 1 ska bara mamma komma åt, därifrån får hon allt från
 "suggestion som ska va vecko baserad också för o hålla kolla o itne behöva tömma den" db, sen ska hon rösta o det hon röstar ska in i doc: "2020-02" ->
 sen kolla ba om denna vecka e 2020-02 -> fyll ut maten i vanliga view
+
+                // console.log(map[key]) Detta är vad omar har valt för måndag & tisdag
+                // uppdatera den sen skicka till baka, varje vecka har en map med varje persons namn
+                // där det finns 'mån:lax' o mappen bär användarnes namn, det är alla suggestions,
+                // här ska uid läsas in så man bara får tillbaka sin egna
+                // sen menyn mamma har hon ska får ut all info o dokumentet.
+
+                // ELLER så finns det bara 1 map som heter suggestions i varje vecka 'doc 2020-02'
+                // o varje rad tex. mån ska ha en array som value med 5st val t.ex suggestions = {
+                // mån: [1,2,3,4,5],
+                //tis: [1,2,3,4,5]
+                //}
+                // men hur löser jag så man inte skriver över någon annans?

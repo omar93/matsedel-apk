@@ -7,14 +7,14 @@ function setWindowSize() {
 }
 setWindowSize() //calls it because of a delay on phone is it waits for the listener
 
-let days = ['Mån','Tis','Ons','Tors','Fre','Lör','Sön']
+let days = ['mån','tis','ons','tor','fre','lör','sön']
 let fullDays = ['Måndag','Tisdag','Onsdag','Torsdag','Fredag','Lördag','Söndag']
 for (let i = 0; i < 7; i++) {
 
     /* Creates the day rows */
     let foodRow = document.createElement('food-row')
     foodRow.setAttribute('day', days[i])
-    foodRow.setAttribute('id', i+1)
+    foodRow.setAttribute('id', days[i])
     document.querySelector('#main').appendChild(foodRow)
 
     /* Creates the day list */
