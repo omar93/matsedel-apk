@@ -9,4 +9,10 @@ settingsBtn.addEventListener('click', e => {
         menu.style.zIndex = -2
     }
     expanded = !expanded
+
+    let foodRows = document.querySelectorAll('food-row')
+    for(let i = 0; i < 7; i++) {
+        foodRows[i].classList.toggle('defaultView')
+        foodRows[i].classList.toggle('adminView')
+    } 
 })

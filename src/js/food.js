@@ -62,14 +62,13 @@ template.innerHTML = `
   line-height: 30px;
 }
 
-#submit {
+span {
   border-radius: .5em;
-  margin: 10px;
   box-shadow:
-  -7px -7px 7px 0 rgba(255,255,255,1),
-  7px 7px 7px 0 rgba(0,0,0,.03);
-  height: 80%;
-  width: 80%;
+  7px 7px 7px 0 rgba(255,255,255,1),
+  -7px -7px 7px 0 rgba(0,0,0,.03);
+  height: 100%;
+  width: 100%;
 }
 
 .active {background-color: red;}

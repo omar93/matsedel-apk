@@ -19,6 +19,7 @@ for (let i = 0; i < 7; i++) {
 
     /* Creates the day list */
     let option = document.createElement('option')
-    option.textContent = days[i]
+    option.textContent = fullDays[i]
+    option.setAttribute('id', i)
     document.querySelector('#days').appendChild(option)
 }
