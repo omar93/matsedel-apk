@@ -90,11 +90,11 @@ span {
 </p>
 
 <div id="adminBox">
-  <span id="omar"></span>
-  <span id="ali"></span>
-  <span id="ahmed"></span>
-  <span id="mamma"></span>
-  <span id="pappa"></span>
+  <span id="slot0"></span>
+  <span id="slot1"></span>
+  <span id="slot2"></span>
+  <span id="slot3"></span>
+  <span id="slot4"></span>
 </div>
 `
 class FoodRow extends window.HTMLElement {
@@ -107,44 +107,45 @@ class FoodRow extends window.HTMLElement {
     this._food = this.shadowRoot.querySelector('#food')
     this._pic = this.shadowRoot.querySelector('#pic')
     this._date = this.shadowRoot.querySelector('#date')
-    this._omar = this.shadowRoot.querySelector('#omar')
-    this._ali = this.shadowRoot.querySelector('#ali')
-    this._ahmed = this.shadowRoot.querySelector('#ahmed')
-    this._mamma = this.shadowRoot.querySelector('#mamma')
-    this._pappa = this.shadowRoot.querySelector('#pappa')
+
+    this._slot0 = this.shadowRoot.querySelector('#slot0')
+    this._slot1 = this.shadowRoot.querySelector('#slot1')
+    this._slot2 = this.shadowRoot.querySelector('#slot2')
+    this._slot3 = this.shadowRoot.querySelector('#slot3')
+    this._slot4 = this.shadowRoot.querySelector('#slot4')
   }
 
   _setListeners() {
 
-    this._omar.addEventListener('click', e => {
+    this._slot0.addEventListener('click', e => {
       e.target.classList.toggle('active')
       chosenFood = e.target.textContent
       let day = this.getAttribute('day')
       db.collection('weeks').doc(date).update({ [day]: chosenFood })
     })
 
-    this._ali.addEventListener('click', e => {
+    this._slot1.addEventListener('click', e => {
       e.target.classList.toggle('active')
       chosenFood = e.target.textContent
       let day = this.getAttribute('day')
       db.collection('weeks').doc(date).update({ [day]: chosenFood })
     })
 
-    this._ahmed.addEventListener('click', e => {
+    this._slot2.addEventListener('click', e => {
       e.target.classList.toggle('active')
       chosenFood = e.target.textContent
       let day = this.getAttribute('day')
       db.collection('weeks').doc(date).update({ [day]: chosenFood })
     })
 
-    this._mamma.addEventListener('click', e => {
+    this._slot3.addEventListener('click', e => {
       e.target.classList.toggle('active')
       chosenFood = e.target.textContent
       let day = this.getAttribute('day')
       db.collection('weeks').doc(date).update({ [day]: chosenFood })
     })
 
-    this._pappa.addEventListener('click', e => {
+    this._slot4.addEventListener('click', e => {
       e.target.classList.toggle('active')
       chosenFood = e.target.textContent
       let day = this.getAttribute('day')
@@ -158,15 +159,15 @@ class FoodRow extends window.HTMLElement {
     let day = date.getDay()
     return `${year}/${month}/${day}`
   }
-  static get observedAttributes() { return ['food', 'day', 'omar', 'ali', 'ahmed', 'mamma', 'pappa'] }
+  static get observedAttributes() { return ['food', 'day', 'slot0', 'slot1', 'slot2', 'slot3', 'slot4'] }
 
   attributeChangedCallback(attr, oldVal, newVal) {
     if (attr === 'food') { this._food.textContent = newVal }
-    if (attr === 'omar') { this._omar.textContent = newVal }
-    if (attr === 'ali') { this._ali.textContent = newVal }
-    if (attr === 'ahmed') { this._ahmed.textContent = newVal }
-    if (attr === 'mamma') { this._mamma.textContent = newVal }
-    if (attr === 'pappa') { this._pappa.textContent = newVal }
+    if (attr === 'slot0') { this._slot0.textContent = newVal }
+    if (attr === 'slot1') { this._slot1.textContent = newVal }
+    if (attr === 'slot2') { this._slot2.textContent = newVal }
+    if (attr === 'slot3') { this._slot3.textContent = newVal }
+    if (attr === 'slot4') { this._slot4.textContent = newVal }
     if (attr === 'day') { this._day.textContent = newVal }
   }
 

@@ -14,7 +14,11 @@ for (let i = 0; i < 7; i++) {
     /* Creates the day rows */
     let foodRow = document.createElement('food-row')
     foodRow.setAttribute('day', days[i])
+    foodRow.setAttribute('dayNumber', i)
     foodRow.setAttribute('id', days[i])
+    for(let j = 0; j < 5; j++) {
+        foodRow.setAttribute('slot'+j, '')
+    }
     document.querySelector('#main').appendChild(foodRow)
 
     /* Creates the day list */
