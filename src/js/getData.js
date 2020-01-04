@@ -44,18 +44,18 @@ db.collection('weeks').doc(date).get().then(doc => {
 })
 
 // Hämtar nästa veckas mat
-// db.collection('weeks').doc(date).get().then(doc => {
-//     if (doc.exists) {
-//         let allRows = document.querySelectorAll('food-row')
-//         let map = doc.data()
-//         for (let i = 0; i < 7; i++) {
-//             let day = allRows[i].getAttribute('day')
-//             for (let key in map) {
-//                 if (day === key) {
-//                     allRows[i].setAttribute('food', map[key])
-//                 }
-//             }
-//         }
+db.collection('weeks').doc(date).get().then(doc => {
+    if (doc.exists) {
+        let allRows = document.querySelectorAll('food-row')
+        let map = doc.data()
+        for (let i = 0; i < 7; i++) {
+            let day = allRows[i].getAttribute('day')
+            for (let key in map) {
+                if (day === key) {
+                    allRows[i].setAttribute('food', map[key])
+                }
+            }
+        }
 
-//     }
-// })
+    }
+})

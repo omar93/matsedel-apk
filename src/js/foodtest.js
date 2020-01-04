@@ -22,14 +22,17 @@ db.collection('weeks').doc(date).get().then(doc => {
         // console.log(map)
         for (let key in map) {
             let subMap = map[key]
+            //console.log('sub ', subMap) // subMap är mappen för varje person t.ex mamma {}
             for (let day in subMap) {
                 let currentDay = document.getElementById(day)
+                //console.log('key ',key) //key är namnet & det används som attribute i webcpomonent, ändra?
                 currentDay.setAttribute(key, subMap[day])
             }
         }
     }
 })
 
+//byter view på main raderna
 settings.addEventListener('click', e=> {
     let f = document.querySelectorAll('food-row')
     for(let i = 0; i < 7; i++) {
