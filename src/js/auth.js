@@ -50,11 +50,12 @@ signoutBtn.addEventListener('click', e => {
 })
 
 // Adds the user to firebase db if he does not exist after signin
-function addUserToDB(user) {
+async function addUserToDB(user) {
+let member = await db.collection('users').doc('counter').get()
   db.collection('users').doc(user.uid).set({
     name: user.displayName,
     email: user.email,
     picture: user.photoURL,
-    uid: user.uid
+    uid: user.uid,
   })
 }

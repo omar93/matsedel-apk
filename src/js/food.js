@@ -1,3 +1,12 @@
+const firebase = require('firebase')
+const db = firebase.firestore()
+const currentWeek = require('week')
+const currentYear = require('year')
+let date = currentYear() + '-' + (currentWeek() + 2)
+
+let chosenFood = ''
+let day = ''
+
 const template = document.createElement('template')
 template.innerHTML = `
 <!--Start Message grid and layout-->
@@ -19,7 +28,7 @@ template.innerHTML = `
 :host(.adminView) {
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: 1fr 8fr 1fr;
+  grid-template-columns: 1fr 9fr;
   grid-template-areas:
   'day adminBox submit';
 }
@@ -64,7 +73,6 @@ template.innerHTML = `
 }
 
 .active {background-color: red;}
-
 @media only screen and (max-width: 900px) {
   .text {
     font-size: 18px;
@@ -83,77 +91,92 @@ template.innerHTML = `
 </p>
 
 <div id="adminBox">
-  <span id="omar" class="ruta">lax</span>
-  <span id="ali" class="ruta">mos</span>
-  <span id="ahmed" class="ruta"></span>
-  <span id="mamma" class="ruta"></span>
-  <span id="pappa" class="ruta"></span>
+  <span id="omar"></span>
+  <span id="ali"></span>
+  <span id="ahmed"></span>
+  <span id="mamma"></span>
+  <span id="pappa"></span>
 </div>
-<button id="submit">Submit</button>
-
-
 `
 class FoodRow extends window.HTMLElement {
   constructor() {
     super()
-    this.classList.add('adminView')
+    this.classList.add('defaultView')
     this.attachShadow({ mode: 'open' })
     this.shadowRoot.appendChild(template.content.cloneNode(true))
     this._day = this.shadowRoot.querySelector('#day')
     this._food = this.shadowRoot.querySelector('#food')
     this._pic = this.shadowRoot.querySelector('#pic')
     this._date = this.shadowRoot.querySelector('#date')
-
-    this._omar = this.shadowRoot.getElementById('omar')
-    this._ali = this.shadowRoot.getElementById('ali')
-    this._ahmed = this.shadowRoot.getElementById('ahmed')
-    this._mamma = this.shadowRoot.getElementById('mamma')
-    this._pappa = this.shadowRoot.getElementById('pappa')
-
-    this._submit = this.shadowRoot.querySelector('#submit')
-  }
-
-  static get observedAttributes() { return ['food', 'day', 'omar','ali', 'ahmed', 'mamma', 'pappa'] }
-
-  attributeChangedCallback(attr, oldVal, newVal) {
-    if (attr === 'food') { this._food.textContent = newVal }
-    if (attr === 'day') { this._day.textContent = newVal }
-    if (attr === 'omar') { this._omar.textContent = newVal }
-    if (attr === 'ali') { this._ali.textContent = newVal }
-    if (attr === 'ahmed') { this._ahmed.textContent = newVal }
-    if (attr === 'mamma') { this._mamma.textContent = newVal }
-    if (attr === 'pappa') { this._pappa.textContent = newVal }
-  }
-
-  connectedCallback() {
-    // this._date.textContent = this._dateString()
-    this._setListeners()
-  }
-
-  disconnectedCallback() {
+    this._omar = this.shadowRoot.querySelector('#omar')
+    this._ali = this.shadowRoot.querySelector('#ali')
+    this._ahmed = this.shadowRoot.querySelector('#ahmed')
+    this._mamma = this.shadowRoot.querySelector('#mamma')
+    this._pappa = this.shadowRoot.querySelector('#pappa')
   }
 
   _setListeners() {
-    this._omar.addEventListener('click', this._getFoodText)
-    this._ali.addEventListener('click', this._getFoodText)
-    this._ahmed.addEventListener('click', this._getFoodText)
-    this._mamma.addEventListener('click', this._getFoodText)
-    this._pappa.addEventListener('click', this._getFoodText)   
-    this._submit.addEventListener('click', e=> {
-    })  
-  }
 
-  _getFoodText(e) {
-    this.classList.toggle('active')
-    console.log(this.textContent)
-  }
+    this._omar.addEventListener('click', e => {
+      e.target.classList.toggle('active')
+      chosenFood = e.target.textContent
+      let day = this.getAttribute('day')
+      db.collection('weeks').doc(date).update({ [day]: chosenFood })
+    })
 
+    this._ali.addEventListener('click', e => {
+      e.target.classList.toggle('active')
+      chosenFood = e.target.textContent
+      let day = this.getAttribute('day')
+      db.collection('weeks').doc(date).update({ [day]: chosenFood })
+    })
+
+    this._ahmed.addEventListener('click', e => {
+      e.target.classList.toggle('active')
+      chosenFood = e.target.textContent
+      let day = this.getAttribute('day')
+      db.collection('weeks').doc(date).update({ [day]: chosenFood })
+    })
+
+    this._mamma.addEventListener('click', e => {
+      e.target.classList.toggle('active')
+      chosenFood = e.target.textContent
+      let day = this.getAttribute('day')
+      db.collection('weeks').doc(date).update({ [day]: chosenFood })
+    })
+
+    this._pappa.addEventListener('click', e => {
+      e.target.classList.toggle('active')
+      chosenFood = e.target.textContent
+      let day = this.getAttribute('day')
+      db.collection('weeks').doc(date).update({ [day]: chosenFood })
+    })
+  }
   _dateString() {
     let date = new Date()
     let year = date.getFullYear()
     let month = date.getMonth()
     let day = date.getDay()
     return `${year}/${month}/${day}`
+  }
+  static get observedAttributes() { return ['food', 'day', 'omar', 'ali', 'ahmed', 'mamma', 'pappa'] }
+
+  attributeChangedCallback(attr, oldVal, newVal) {
+    if (attr === 'food') { this._food.textContent = newVal }
+    if (attr === 'omar') { this._omar.textContent = newVal }
+    if (attr === 'ali') { this._ali.textContent = newVal }
+    if (attr === 'ahmed') { this._ahmed.textContent = newVal }
+    if (attr === 'mamma') { this._mamma.textContent = newVal }
+    if (attr === 'pappa') { this._pappa.textContent = newVal }
+    if (attr === 'day') { this._day.textContent = newVal }
+  }
+
+  connectedCallback() {
+    day = this.getAttribute('day')
+    this._setListeners()
+  }
+
+  disconnectedCallback() {
   }
 }
 

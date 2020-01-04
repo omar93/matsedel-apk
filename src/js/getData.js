@@ -3,9 +3,9 @@ const db = firebase.firestore()
 
 const currentWeek = require('week')
 const currentYear = require('year')
-let days = ['mån','tis','ons','tor','fre','lör','sön']
+let days = ['mån', 'tis', 'ons', 'tor', 'fre', 'lör', 'sön']
 // Denna vecka
-let date = currentYear() + '-' + (currentWeek() + 1)
+let date = currentYear() + '-' + (currentWeek() + 2)
 
 // Hämtar listornas innehåll
 let dbs = ['food', 'addon']
@@ -27,9 +27,16 @@ for (let i = 0; i < 2; i++) {
 // Hämtar veckans mat
 db.collection('weeks').doc(date).get().then(doc => {
     if (doc.exists) {
-        for (let i = 0; i < 7; i++) {
-            let foodRow = document.getElementById(days[i])
-            foodRow.setAttribute('food', doc.data().suggestions[i])
-        }
+            let allRows = document.querySelectorAll('food-row')
+            let map = doc.data()
+            for(let i = 0; i < 7; i++) {
+                let day = allRows[i].getAttribute('day')
+                for (let key in map) {
+                    if(day === key) {
+                        allRows[i].setAttribute('food', map[key])
+                    }
+                }
+            }
+
     }
 })
