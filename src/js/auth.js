@@ -17,7 +17,7 @@ firebase.auth().onAuthStateChanged(user => {
 
 // Checks if the user excists in the firebase db after signin
 function checkUserDB(user) {
-  console.log(user)
+  // console.log(user)
   let userRef = db.collection('users').doc(user.uid)
   userRef.get().then(doc => {
     if (!doc.exists) {

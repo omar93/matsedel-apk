@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.config.js --host 192.168.10.224",
+    "start": "webpack-dev-server --config webpack.config.js",
     "build": "webpack"
   },
   "author": "",

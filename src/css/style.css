@@ -14,7 +14,7 @@ body {margin: 0;}
     grid-template-rows: 10% 10% 70% 10%;
     grid-template-areas:
     '. . . .'
-    '. weeks weeks .'
+    '. weeks menu .'
     '. main  menu .'
     '. . . .';
 }
@@ -33,6 +33,7 @@ body {margin: 0;}
 #weeks {
     grid-area: weeks;
     border: 1px solid black;
+    border-right: none;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -103,6 +104,7 @@ input {
 #google {
     height: 80%;
 }
+
 
 /* #chooseFood > * {
     font-size: 30px;

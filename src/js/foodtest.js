@@ -4,6 +4,8 @@ const db = firebase.firestore()
 const currentWeek = require('week')
 const currentYear = require('year')
 
+let settings = document.querySelector('#settings')
+
 let date = (currentYear() + '-' + currentWeek() + 2)
 let days = ['mån', 'tis', 'ons', 'tor', 'fre', 'lör', 'sön']
 
@@ -17,7 +19,7 @@ db.collection('weeks').doc(date).get().then(doc => {
             mamma: doc.data().mamma,
             pappa: doc.data().pappa
         }
-        console.log(map)
+        // console.log(map)
         for (let key in map) {
             let subMap = map[key]
             for (let day in subMap) {
@@ -26,4 +28,12 @@ db.collection('weeks').doc(date).get().then(doc => {
             }
         }
     }
+})
+
+settings.addEventListener('click', e=> {
+    let f = document.querySelectorAll('food-row')
+    for(let i = 0; i < 7; i++) {
+        f[i].classList.toggle('defaultView')
+        f[i].classList.toggle('adminView')
+    } 
 })
