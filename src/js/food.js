@@ -1,11 +1,18 @@
 const firebase = require('firebase')
 const db = firebase.firestore()
-const currentWeek = require('week')
-const currentYear = require('year')
-let date = currentYear() + '-' + (currentWeek() + 2)
+const week = require('week')
+const year = require('year')
+
+let thisWeek = week()
+let nextWeek = parseInt(week())
+let thisYear = year()
+
+let date = `${thisYear}-${nextWeek+1}`
 
 let chosenFood = ''
 let day = ''
+
+console.log('date:',date)
 
 const template = document.createElement('template')
 template.innerHTML = `
@@ -116,40 +123,41 @@ class FoodRow extends window.HTMLElement {
   }
 
   _setListeners() {
+    
 
     this._slot0.addEventListener('click', e => {
       e.target.classList.toggle('active')
       chosenFood = e.target.textContent
       let day = this.getAttribute('day')
-      db.collection('weeks').doc(date).update({ [day]: chosenFood })
+      db.collection('weeks').doc(date).set({ [day]: chosenFood },{merge:true})
     })
 
     this._slot1.addEventListener('click', e => {
       e.target.classList.toggle('active')
       chosenFood = e.target.textContent
       let day = this.getAttribute('day')
-      db.collection('weeks').doc(date).update({ [day]: chosenFood })
+      db.collection('weeks').doc(date).set({ [day]: chosenFood },{merge:true})
     })
 
     this._slot2.addEventListener('click', e => {
       e.target.classList.toggle('active')
       chosenFood = e.target.textContent
       let day = this.getAttribute('day')
-      db.collection('weeks').doc(date).update({ [day]: chosenFood })
+      db.collection('weeks').doc(date).set({ [day]: chosenFood },{merge:true})
     })
 
     this._slot3.addEventListener('click', e => {
       e.target.classList.toggle('active')
       chosenFood = e.target.textContent
       let day = this.getAttribute('day')
-      db.collection('weeks').doc(date).update({ [day]: chosenFood })
+      db.collection('weeks').doc(date).set({ [day]: chosenFood },{merge:true})
     })
 
     this._slot4.addEventListener('click', e => {
       e.target.classList.toggle('active')
       chosenFood = e.target.textContent
       let day = this.getAttribute('day')
-      db.collection('weeks').doc(date).update({ [day]: chosenFood })
+      db.collection('weeks').doc(date).set({ [day]: chosenFood },{merge:true})
     })
   }
   _dateString() {

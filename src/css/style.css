@@ -1,6 +1,7 @@
 body {margin: 0;}
 /* img {display: none;} */
 .hide {display: none;}
+.admin {display: none;}
 #settings {width: 80px; margin-right: 30px;}
 
 #container {
@@ -31,6 +32,7 @@ body {margin: 0;}
 .chooseFood > #menu {display: none;}
 
 #weeks {
+    background-color: #EEE;
     grid-area: weeks;
     border: 1px solid black;
     border-right: none;
@@ -103,6 +105,20 @@ input {
 
 #google {
     height: 80%;
+}
+
+.weekText {
+    margin-left: 20px;
+    border-radius: .5em;
+    box-shadow:
+    -10px -10px 7px 0 rgba(255,255,255,1),
+    10px 10px 7px 0 rgba(0,0,0,.1);
+    height: 50%;
+    width: 20%;
+    text-align: center;
+}
+.weekText:hover {
+    background-color: white;
 }
 
 

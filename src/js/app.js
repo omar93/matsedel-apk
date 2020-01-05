@@ -10,8 +10,8 @@ require('./food')
 require('./view')
 
 //Suggestions
-require('./setSuggestions')
-require('./getSuggestions')
+require('./foodSuggestion')
+require('./getFoodSquares')
 
 //weekly food and list data
 require('./getListData')

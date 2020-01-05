@@ -1,8 +1,16 @@
-let settingsBtn = document.querySelector('#settings')
+// let settingsBtn = document.querySelector('#settings')
+let menuBtn = document.querySelector('#menuBtn')
 let menu = document.querySelector('#menu')
+const week = require('week')
 let expanded = false
 
-settingsBtn.addEventListener('click', e => {
+let thisWeek = document.querySelector('#thisWeek')
+let nextWeek = document.querySelector('#nextWeek')
+
+thisWeek.textContent = 'Denna vecka'
+nextWeek.textContent = 'Nästa vecka'
+
+menuBtn.addEventListener('click', e => {
     if(!expanded) {
         menu.style.zIndex = 2
     } else {
@@ -16,3 +24,7 @@ settingsBtn.addEventListener('click', e => {
         foodRows[i].classList.toggle('adminView')
     } 
 })
+
+thisWeek.addEventListener('click', e=> [
+    alert('lol')
+])

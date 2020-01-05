@@ -17,15 +17,24 @@ firebase.auth().onAuthStateChanged(user => {
 
 // Checks if the user excists in the firebase db after signin
 function checkUserDB(user) {
-  // console.log(user)
-  let userRef = db.collection('users').doc(user.uid)
-  userRef.get().then(doc => {
+
+  console.log(user.displayName,' signed in')
+  //cheks user in db
+  db.collection('users').doc(user.uid).get().then(doc => {
     if (!doc.exists) {
       console.log('user not in database, adding user: ' + user.displayName)
-      addUserToDB(user)
+      addNewUser(user)
     }
     googleBtn.style.display = 'none'
   }).catch(error => console.log('add user to db error: ' + error))
+
+  db.collection('suggestions').doc(user.uid).get().then(doc => {
+    if (!doc.exists) {
+      console.log('user doc not in database, adding user: ' + user.displayName)
+      console.log('doc ID: ' + user.uid)
+      addNewSuggetionsDoc(user)
+    }
+  })
 }
 
 // Google signin with popup window
@@ -50,12 +59,24 @@ signoutBtn.addEventListener('click', e => {
 })
 
 // Adds the user to firebase db if he does not exist after signin
-async function addUserToDB(user) {
-let member = await db.collection('users').doc('counter').get()
+async function addNewUser(user) {
   db.collection('users').doc(user.uid).set({
     name: user.displayName,
     email: user.email,
     picture: user.photoURL,
     uid: user.uid,
+  })
+}
+
+// Adds a new doc for suggestions for the new user
+async function addNewSuggetionsDoc(user) {
+  db.collection('suggestions').doc(user.uid).set({
+    0: "",
+    1: "",
+    2: "",
+    3: "",
+    4: "",
+    5: "",
+    6:""
   })
 }

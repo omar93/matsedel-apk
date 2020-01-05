@@ -29,15 +29,14 @@
         flex-direction: column;
     }
 
-    #settings {
+    /* #settings {
         width: 10%;
         float: right;
         display: flex;
-    }
+    } */
 
-    #google {
-        width: 30%;
-    }
+    #google {width: 30%;}
+    #menuBtn {margin-top: 5px;}
 
     food-row {
         height: 100%;
@@ -58,4 +57,12 @@
         z-index: -2;
         line-height: 20px;
     }
+
+    .weekText {
+        text-align: center;
+        font-size: 15px;
+        border: 1px black solid;
+    }
+    .admin {display: none;}
+    
 }
