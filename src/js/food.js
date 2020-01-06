@@ -84,6 +84,15 @@ span {
     font-size: 18px;
     line-height: 30px;
   }
+
+  span {
+    border-radius: 0;
+    box-shadow:0;
+    height: 100%;
+    width: 20%;
+    word-wrap: break-all;
+    font-size:10px;
+  }
 }
 </style>
 <!--End Message grid and layout-->

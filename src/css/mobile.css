@@ -87,6 +87,10 @@
     #menuBtn {display: block;}
     .menuBtn {
         height: 40px;
+        width: 25%;
+        font-size: 10px;
     }
+    .menuBtn {margin: 1px;}
     
+    .hamham {display: none;}
 }

@@ -19,8 +19,8 @@ firebase.auth().onAuthStateChanged(user => {
 function checkUserDB(user) {
 
   // these 2 rows gives admin privilge, bad implementation, fix later but works for family
-  if(user.email === 'omaralhamad93@gmail.com') {document.getElementById('hamhamBtn').style.display = 'block'}
-  if(user.email === 'basma@optikab.se') {document.getElementById('hamhamBtn').style.display = 'block'}
+  if(user.email === 'omaralhamad93@gmail.com') {document.getElementById('hamhamBtn').classList.remove('hamham')}
+  if(user.email === 'basma@optikab.se') {document.getElementById('hamhamBtn').classList.remove('hamham')}
 
   console.log(user.displayName,' signed in')
   //cheks user in db
