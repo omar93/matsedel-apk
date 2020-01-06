@@ -18,6 +18,10 @@ firebase.auth().onAuthStateChanged(user => {
 // Checks if the user excists in the firebase db after signin
 function checkUserDB(user) {
 
+  // these 2 rows gives admin privilge, bad implementation, fix later but works for family
+  if(user.email === 'omaralhamad93@gmail.com') {document.getElementById('hamhamBtn').style.display = 'block'}
+  if(user.email === 'basma@optikab.se') {document.getElementById('hamhamBtn').style.display = 'block'}
+
   console.log(user.displayName,' signed in')
   //cheks user in db
   db.collection('users').doc(user.uid).get().then(doc => {
