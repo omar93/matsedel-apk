@@ -10,11 +10,26 @@
 </head>
 <body>
     <div id="container" class="view viewFood">
+
         <div id="main"></div>
         <div id="main2"></div>
 
         <div id="menu">
-            <img src="images/google_normal.png" id="google" class="hide">
+            <!-- <img src="images/google_normal.png" id="google" class="hide"> -->
+            <div id="signupContainer">
+
+                <form id="form" class="hide">
+                    <span>E-mail:</span><br>
+                    <input id="email" type="text" name="email" placeholder="email@email.com" autocomplete="username">
+                    <br>
+                    <span>Password</span><br>
+                    <input id="password" type="password" placeholder="123456" autocomplete="current-password">
+                    <br>
+                </form><br>
+                <button id="siginBtn" class="hide">Login</button><br>
+                <br><button id="newAcc" class="hide">New Account</button>
+            </div>
+
             <div id="chooseFood">
 
                 <!--Drop down with typing box for the food-->
@@ -45,11 +60,9 @@
             <p id="thisWeek" class="weekText BtnStyle menuBtn"><span>Denna vecka</span><br></p>
             <p id="nextWeek" class="weekText BtnStyle menuBtn"><span>Nästa vecka</span><br></p>
             <span id="menuBtn" class="weekText BtnStyle menuBtn">Menu</span>
-            <span id="hamhamBtn" class="weekText BtnStyle menuBtn hamham">HamHam hemlig meny</span>
+            <span id="hamhamBtn" class="weekText BtnStyle menuBtn" style="display: none;">HamHam hemlig meny</span>
 
-            
             <img src="./images/button.png" id="settings" class="admin">
-
             
         </div>
     </div>

@@ -19,6 +19,7 @@
   "dependencies": {
     "date-of-week": "^0.1.2",
     "firebase": "^7.6.0",
+    "firebaseui": "^4.4.0",
     "week": "^0.2.0",
     "weeknumber": "^1.1.2",
     "year": "^0.2.1"

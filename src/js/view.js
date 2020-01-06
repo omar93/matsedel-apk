@@ -18,6 +18,7 @@ nextWeek.appendChild(nextSpan)
 
 // For mobile, toggles the menu section
 menuBtn.addEventListener('click', e => {
+    console.log('menu press')
     if(!expanded) {
         menu.style.zIndex = 0
     } else {
