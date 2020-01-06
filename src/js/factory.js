@@ -37,6 +37,7 @@ for (let i = 0; i < 7; i++) {
     foodRow.setAttribute('day', days[i])
     foodRow.setAttribute('dayNumber', i)
     foodRow.setAttribute('id', days[i+10])
+    foodRow.classList.add('next')
     foodRow.classList.add('secondary')
     for (let j = 0; j < 5; j++) {
         foodRow.setAttribute('slot' + j, '')

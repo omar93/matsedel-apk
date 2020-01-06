@@ -9,6 +9,7 @@ let nextWeek = week.weekNumber()+1
 let thisYear = year()
 
 let date = `${thisYear}-${thisWeek}`
+let date2 = `${thisYear}-${thisWeek+1}`
 
 // Hämtar veckans mat
 db.collection('weeks').doc(date).get().then(doc => {
@@ -27,9 +28,9 @@ db.collection('weeks').doc(date).get().then(doc => {
 })
 
 // Hämtar nästa veckas mat
-db.collection('weeks').doc(date).get().then(doc => {
+db.collection('weeks').doc(date2).get().then(doc => {
     if (doc.exists) {
-        let allRows = document.querySelectorAll('food-row')
+        let allRows = document.getElementsByClassName('next')
         let map = doc.data()
         for (let i = 0; i < 7; i++) {
             let day = allRows[i].getAttribute('day')

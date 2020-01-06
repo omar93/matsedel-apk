@@ -7,7 +7,7 @@ let thisWeek = week.weekNumber()
 let nextWeek = week.weekNumber()
 let thisYear = year()
 
-let date = `${thisYear}-${thisWeek}`
+let date = `${thisYear}-${thisWeek+1}`
 
 let chosenFood = ''
 let day = ''
