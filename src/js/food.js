@@ -1,13 +1,13 @@
 const firebase = require('firebase')
 const db = firebase.firestore()
-const week = require('week')
+const week = require('weeknumber')
 const year = require('year')
 
-let thisWeek = week()
-let nextWeek = parseInt(week())
+let thisWeek = week.weekNumber()
+let nextWeek = week.weekNumber()
 let thisYear = year()
 
-let date = `${thisYear}-${nextWeek+1}`
+let date = `${thisYear}-${thisWeek}`
 
 let chosenFood = ''
 let day = ''

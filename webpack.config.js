@@ -11,7 +11,7 @@ const config = {
   devServer: {
    contentBase: path.join(__dirname, 'src'),
    port: 4000,
-   public: 'localhost:4000'
+   public: '192.168.10.224:4000'
  },
   module: {
     rules: [
