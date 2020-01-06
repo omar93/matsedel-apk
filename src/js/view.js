@@ -1,7 +1,7 @@
 // let settingsBtn = document.querySelector('#settings')
 let menuBtn = document.querySelector('#menuBtn')
 let menu = document.querySelector('#menu')
-const week = require('week')
+const week = require('weeknumber')
 let expanded = false
 
 let thisSpan = document.createElement('span')
@@ -10,10 +10,10 @@ let nextSpan = document.createElement('span')
 let thisWeek = document.querySelector('#thisWeek')
 let nextWeek = document.querySelector('#nextWeek')
 
-thisSpan.textContent = week()
+thisSpan.textContent = week.weekNumber()
 thisWeek.appendChild(thisSpan)
 
-nextSpan.textContent = parseInt(week())+1
+nextSpan.textContent = week.weekNumber()+1
 nextWeek.appendChild(nextSpan)
 
 // For mobile, toggles the menu section
