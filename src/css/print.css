@@ -1,0 +1,36 @@
+@media print {
+
+    #container > #menu {display: none;}
+    #container {
+        height: 100vh;
+        width: 100%;
+        display: grid;
+    }
+    
+    .viewFood {
+        grid-template-columns: 5% 90% 5%;
+        grid-template-rows: 10% 70% 20%;
+        grid-template-areas:
+        '. weeks .'
+        '. main .'
+        '. . .';
+    }
+    
+    #weeks > #nextWeek, #menuBtn, #hamhamBtn {
+        display: none;
+    }
+    #hamhamBtn {
+        display: none;
+    }
+    food-row {
+        border: black 1px solid;
+    }
+
+    #main, #main2, #weeks, #menu {
+        border: 1px solid black;
+    }
+}
+
+@page {
+    size: landscape;
+}

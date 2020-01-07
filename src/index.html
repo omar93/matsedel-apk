@@ -5,6 +5,7 @@
     <link rel="shortcut icon" href="./images/favicon.png">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/mobile.css">
+    <link  rel="stylesheet" href="./css/print.css" type="text/css" media="print">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta charset="utf-8">
 </head>
@@ -16,22 +17,10 @@
 
         <div id="menu">
             <!-- <img src="images/google_normal.png" id="google" class="hide"> -->
-            <div id="signupContainer">
 
-                <form id="form" class="hide">
-                    <span>E-mail:</span><br>
-                    <input id="email" type="text" name="email" placeholder="email@email.com" autocomplete="username">
-                    <br>
-                    <span>Password</span><br>
-                    <input id="password" type="password" placeholder="123456" autocomplete="current-password">
-                    <br>
-                </form><br>
-                <button id="siginBtn" class="hide">Login</button><br>
-                <br><button id="newAcc" class="hide">New Account</button>
-            </div>
 
-            <div id="chooseFood">
-
+            <div id="chooseFood" style="display: none;">
+                <button id="signout_btn" class="input BtnStyle">signout</button>
                 <!--Drop down with typing box for the food-->
                 <p class="header">Välj maträtt</p>
                 <input list="food" id="foodList" class="input" placeholder="">
@@ -48,21 +37,33 @@
 
                 <!--Submit button for suggestions-->
                 <button id="submit" class="input">Submit</button>
-                <button id="signout_btn" class="input">signout &spades;</button>
+                
 
                 <!-- <p class="header"><span>Föreslå ny maträtt</span></p>
                 <input type="text" id="addNoListInput"><br>
                 <button id="submit">Submit</button> -->
             </div>
+            <div id="signupContainer" style="display: none;">
+
+                <form id="form">
+                    <span>E-mail:</span><br>
+                    <input id="email" class="inputStyle" type="text" name="email" placeholder="email@email.com" autocomplete="username">
+                    <br>
+                    <span>Password</span><br>
+                    <input id="password" class="inputStyle" type="password" placeholder="123456" autocomplete="current-password">
+                    <input type="submit" style="display: none;">
+                    <br>
+                </form><br>
+                <button id="siginBtn" class="formBtn BtnStyle">Login</button><br><br>
+                <br><br><button id="newAcc" class="formBtn BtnStyle">New Account</button>
+            </div>
         </div>
         <div id="weeks">
 
-            <p id="thisWeek" class="weekText BtnStyle menuBtn"><span>Denna vecka</span><br></p>
-            <p id="nextWeek" class="weekText BtnStyle menuBtn"><span>Nästa vecka</span><br></p>
+            <span id="thisWeek" class="weekText BtnStyle menuBtn"><span>Denna vecka</span><br></span>
+            <span id="nextWeek" class="weekText BtnStyle menuBtn"><span>Nästa vecka</span><br></span>
             <span id="menuBtn" class="weekText BtnStyle menuBtn">Menu</span>
             <span id="hamhamBtn" class="weekText BtnStyle menuBtn" style="display: none;">HamHam hemlig meny</span>
-
-            <img src="./images/button.png" id="settings" class="admin">
             
         </div>
     </div>

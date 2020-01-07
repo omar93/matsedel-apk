@@ -34,9 +34,15 @@ newAcc.addEventListener('click', e=> {
   auth.createUserWithEmailAndPassword(email.value,password.value)
 })
 
+form.addEventListener('submit', e=> {
+  e.preventDefault()
+  auth.signInWithEmailAndPassword(email.value,password.value)
+})
+
 // Checks if the user excists in the firebase db after signin
 function checkUserDB(user) {
   hideForm()
+  showMenu()
   console.log('email: ', user.email)
   // these 2 rows gives admin privilge, bad implementation, fix later but works for family
   if(user.email === 'omar93@hotmail.se') {document.getElementById('hamhamBtn').style.display = 'block'}
@@ -65,7 +71,9 @@ function checkUserDB(user) {
 signoutBtn.addEventListener('click', e => {
   firebase.auth().signOut().then(() => {
     console.log('signed out')
+    document.getElementById('hamhamBtn').style.display = 'none'
     showForm()
+    hideMenu()
   }).catch(() => {
     console.log('signout error')
   })
@@ -94,14 +102,8 @@ async function addNewSuggetionsDoc(user) {
   })
 }
 
-function showForm() {
-  form.classList.remove('hide')
-  signinBtn.classList.remove('hide')
-  newAcc.classList.remove('hide')
-}
+function showForm() {document.getElementById('signupContainer').style.display = 'block'}
+function hideForm() {document.getElementById('signupContainer').style.display = 'none'}
 
-function hideForm() {
-  form.classList.add('hide')
-  signinBtn.classList.add('hide')
-  newAcc.classList.add('hide')
-}
+function showMenu() {document.getElementById('chooseFood').style.display = 'block'}
+function hideMenu() {document.getElementById('chooseFood').style.display = 'none'}

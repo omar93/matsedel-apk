@@ -37,7 +37,7 @@ template.innerHTML = `
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 9fr;
   grid-template-areas:
-  'day adminBox submit';
+  'day adminBox';
 }
 
 #adminBox {
@@ -83,6 +83,18 @@ span {
   .text {
     font-size: 18px;
     line-height: 30px;
+  }
+
+  #adminBox > span {
+    width: 100%;
+    height:100%;
+    border: 1px solid black;
+    font-size: 8px;
+    line-height: 20px;
+  }
+
+  #adminBox {
+    font-size:10px;
   }
 
   span {
