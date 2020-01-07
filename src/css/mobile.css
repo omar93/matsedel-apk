@@ -18,7 +18,7 @@
         flex-direction: row;
         justify-content: space-between;
     }
-    #weeks { border-top: #a8a5a2 1px solid; }
+    #weeks { border-top: #f9d0ff 1px solid; }
 
     #main {
         grid-area: main;

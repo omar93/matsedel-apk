@@ -1,7 +1,8 @@
 const firebase = require('firebase')
 const db = firebase.firestore()
 
-db.collection('suggestions').get().then(snapshot => {
+//Listens to changes and updates the "squares"
+db.collection('suggestions').onSnapshot(snapshot => {
     let i = 0;
     snapshot.forEach(doc => {
         let map = doc.data()

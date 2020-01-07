@@ -35,7 +35,7 @@ template.innerHTML = `
 :host(.adminView) {
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: 1fr 9fr;
+  grid-template-columns: 60px 1fr;
   grid-template-areas:
   'day adminBox';
 }
@@ -49,7 +49,7 @@ template.innerHTML = `
 #adminBox > span {
   width: 100%;
   height:100%;
-  border: 1px solid black;
+  border: #f9d0ff solid 1px;
   font-size: 20px;
   text-align:center;
   line-height: 30px;
@@ -57,7 +57,7 @@ template.innerHTML = `
 
 #food {
   grid-area:food;
-  margin-left:20px;
+  margin-left:25px;
 }
 #day {
   grid-area: day;
@@ -71,15 +71,14 @@ template.innerHTML = `
 
 span {
   border-radius: .5em;
-  box-shadow:
-  7px 7px 7px 0 rgba(255,255,255,1),
-  -7px -7px 7px 0 rgba(0,0,0,.03);
   height: 100%;
   width: 100%;
-}
+} 
 
-.active {background-color: red;}
+
+.active {background-color: #f9d0ff;}
 @media only screen and (max-width: 900px) {
+
   .text {
     font-size: 18px;
     line-height: 30px;
@@ -88,9 +87,13 @@ span {
   #adminBox > span {
     width: 100%;
     height:100%;
-    border: 1px solid black;
+    border: #f9d0ff solid 1px;
     font-size: 8px;
     line-height: 20px;
+  }
+
+  .box {
+    {background-color: #f9d0ff;}
   }
 
   #adminBox {
@@ -99,7 +102,6 @@ span {
 
   span {
     border-radius: 0;
-    box-shadow:0;
     height: 100%;
     width: 20%;
     word-wrap: break-all;
@@ -118,11 +120,11 @@ span {
 </p>
 
 <div id="adminBox">
-  <span id="slot0"></span>
-  <span id="slot1"></span>
-  <span id="slot2"></span>
-  <span id="slot3"></span>
-  <span id="slot4"></span>
+  <span id="slot0" class="box"></span>
+  <span id="slot1" class="box"></span>
+  <span id="slot2" class="box"></span>
+  <span id="slot3" class="box"></span>
+  <span id="slot4" class="box"></span>
 </div>
 `
 class FoodRow extends window.HTMLElement {

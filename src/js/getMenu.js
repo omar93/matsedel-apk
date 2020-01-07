@@ -11,8 +11,8 @@ let thisYear = year()
 let date = `${thisYear}-${thisWeek}`
 let date2 = `${thisYear}-${thisWeek+1}`
 
-// Hämtar veckans mat
-db.collection('weeks').doc(date).get().then(doc => {
+// Gets this weeks food with listener
+db.collection('weeks').doc(date).onSnapshot(doc => {
     if (doc.exists) {
         let allRows = document.querySelectorAll('food-row')
         let map = doc.data()
@@ -27,8 +27,8 @@ db.collection('weeks').doc(date).get().then(doc => {
     }
 })
 
-// Hämtar nästa veckas mat
-db.collection('weeks').doc(date2).get().then(doc => {
+// Gets next weeks food with listener
+db.collection('weeks').doc(date2).onSnapshot(doc => {
     if (doc.exists) {
         let allRows = document.getElementsByClassName('next')
         let map = doc.data()

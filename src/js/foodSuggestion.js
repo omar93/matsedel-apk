@@ -23,6 +23,7 @@ async function connectToDB(user) {
         let foodString = food.value + ' med ' + addon.value
         if (addon.value === '') { foodString = food.value }
         console.log('day: ' [day],' mat: ', foodString)
+        
         //Updates the field for the selected day in the db
         db.collection('suggestions').doc(user.uid).set({
             [day]: foodString
