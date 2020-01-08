@@ -16,8 +16,8 @@ let newAccBtn = document.querySelector('#newAcc')
 // have to do it everytime page refreshesh
 firebase.auth().onAuthStateChanged(user => {
   if (user) { // if user signed in
-    console.log('inne')
-    console.log(user.uid)
+    // console.log('inne')
+    // console.log(user.uid)
     checkUserDB(user)
   } else {
     showForm()
@@ -43,7 +43,7 @@ form.addEventListener('submit', e=> {
 function checkUserDB(user) {
   hideForm()
   showMenu()
-  console.log('email: ', user.email)
+  // console.log('email: ', user.email)
   // these 2 rows gives admin privilge, bad implementation, fix later but works for family
   if(user.email === 'omar93@hotmail.se') {document.getElementById('hamhamBtn').classList.remove('hidden')}
   if(user.email === 'basma@optikab.se') {document.getElementById('hamhamBtn').classList.remove('hidden')}

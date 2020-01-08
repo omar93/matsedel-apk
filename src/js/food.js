@@ -12,7 +12,7 @@ let date = `${thisYear}-${thisWeek+1}`
 let chosenFood = ''
 let day = ''
 
-console.log('date:',date)
+// console.log('date:',date)
 
 const template = document.createElement('template')
 template.innerHTML = `
