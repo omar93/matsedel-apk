@@ -45,8 +45,8 @@ function checkUserDB(user) {
   showMenu()
   console.log('email: ', user.email)
   // these 2 rows gives admin privilge, bad implementation, fix later but works for family
-  if(user.email === 'omar93@hotmail.se') {document.getElementById('hamhamBtn').style.display = 'block'}
-  if(user.email === 'basma@optikab.se') {document.getElementById('hamhamBtn').style.display = 'block'}
+  if(user.email === 'omar93@hotmail.se') {document.getElementById('hamhamBtn').classList.remove('hidden')}
+  if(user.email === 'basma@optikab.se') {document.getElementById('hamhamBtn').classList.remove('hidden')}
 
   // console.log(user.displayName,' signed in')
   //cheks user in db
