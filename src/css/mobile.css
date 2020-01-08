@@ -77,10 +77,11 @@
         text-align: center;
         margin-top:10px;
     }
-    .BtnStyle:hover {background-color:#f6f6f6;}
+    .BtnStyle:hover {background-color:hsl(0, 0%, 91%);}
     .BtnStyle:active {
         position:relative;
         top:1px;
+        background-color: hsl(0, 0%, 93%);
     }
 
     #menuBtn {display: block;}
@@ -109,4 +110,5 @@
     .hiddenPhone {display: none !important; }
     .hidden {display: none !important; }
     .printText {display: none !important;}
+    .active {background-color: hsl(0, 0%, 87%);}
 }

@@ -135,11 +135,12 @@ input {
     width: 100%;
     text-align: center;
 }
-.BtnStyle:hover {background-color:#f6f6f6;}
+.BtnStyle:hover {background-color:hsl(0, 0%, 91%);}
 .BtnStyle:active {
 	position:relative;
     top:1px;
     border-radius:6px;
+    background-color: hsl(0, 0%, 93%);
 }
 
 #signout_btn {
@@ -171,3 +172,4 @@ input {
 }
 
 .hidden {display: none !important; }
+.active {background-color: hsl(0, 0%, 87%);}

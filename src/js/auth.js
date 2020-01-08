@@ -12,6 +12,13 @@ let password = document.querySelector('#password')
 let signinBtn = document.querySelector('#siginBtn')
 let newAccBtn = document.querySelector('#newAcc')
 
+
+
+firebase.firestore().settings({
+  cacheSizeBytes: firebase.firestore.CACHE_SIZE_UNLIMITED
+})
+firebase.firestore().enablePersistence()
+
 // checks if a user had signed in before so he dosen't
 // have to do it everytime page refreshesh
 firebase.auth().onAuthStateChanged(user => {

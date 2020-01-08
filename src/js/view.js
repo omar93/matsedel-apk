@@ -25,6 +25,10 @@ let printText = document.querySelector('.printText')
 
 // For mobile, toggles the menu section
 menuBtn.addEventListener('click', e => {
+
+    removeActive()
+    menuBtn.classList.add('active')
+
     main.classList.add('hiddenPhone')
     main2.classList.add('hiddenPhone')
     menu.classList.remove('hiddenPhone')
@@ -33,6 +37,10 @@ menuBtn.addEventListener('click', e => {
 
 // The admin button that toggles the admin view 
 hamhamBtn.addEventListener('click', e=> {
+
+    removeActive()
+    hamhamBtn.classList.add('active')
+
     main.classList.remove('hidden')
     main2.classList.add('hidden')
     menu.classList.add('hiddenPhone')
@@ -44,6 +52,10 @@ hamhamBtn.addEventListener('click', e=> {
 
 
 thisWeek.addEventListener('click', e=> {
+
+    removeActive()
+    thisWeek.classList.add('active')
+
     main.classList.remove('hidden')
     main2.classList.add('hidden')
     menu.classList.add('hiddenPhone')
@@ -54,6 +66,10 @@ thisWeek.addEventListener('click', e=> {
 })
 
 nextWeek.addEventListener('click', e=> {
+
+    removeActive()
+    nextWeek.classList.add('active')
+
     main.classList.add('hidden')
     main2.classList.remove('hidden')
     menu.classList.add('hiddenPhone')
@@ -77,4 +93,10 @@ function hideAdminView() {
         foodRows[i].classList.remove('adminView')
         foodRows[i].classList.add('defaultView')
     }
+}
+
+function removeActive() {
+    let pastActive = document.querySelector('.active')
+    console.log('past: ' , pastActive)
+    if(pastActive) { pastActive.classList.remove('active')}
 }
