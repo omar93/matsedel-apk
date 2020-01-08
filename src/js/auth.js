@@ -55,7 +55,6 @@ function checkUserDB(user) {
       console.log('user not in database, adding user: ' + user.uid)
       addNewUser(user)
     }
-    
   }).catch(error => console.log('add user to db error: ' + error))
 
   db.collection('suggestions').doc(user.uid).get().then(doc => {
