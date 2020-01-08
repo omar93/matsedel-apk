@@ -97,6 +97,5 @@ function hideAdminView() {
 
 function removeActive() {
     let pastActive = document.querySelector('.active')
-    console.log('past: ' , pastActive)
     if(pastActive) { pastActive.classList.remove('active')}
 }
