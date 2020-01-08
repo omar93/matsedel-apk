@@ -25,8 +25,8 @@ let printText = document.querySelector('.printText')
 
 // For mobile, toggles the menu section
 menuBtn.addEventListener('click', e => {
-    main.classList.add('hidden')
-    main2.classList.add('hidden')
+    main.classList.add('hiddenPhone')
+    main2.classList.add('hiddenPhone')
     menu.classList.remove('hiddenPhone')
     hideAdminView()
 })
@@ -36,6 +36,9 @@ hamhamBtn.addEventListener('click', e=> {
     main.classList.remove('hidden')
     main2.classList.add('hidden')
     menu.classList.add('hiddenPhone')
+
+    main.classList.remove('hiddenPhone')
+    main2.classList.remove('hiddenPhone')
     showAdminView()
 })
 
@@ -44,6 +47,9 @@ thisWeek.addEventListener('click', e=> {
     main.classList.remove('hidden')
     main2.classList.add('hidden')
     menu.classList.add('hiddenPhone')
+
+    main.classList.remove('hiddenPhone')
+    main2.classList.remove('hiddenPhone')
     hideAdminView()
 })
 
@@ -51,6 +57,9 @@ nextWeek.addEventListener('click', e=> {
     main.classList.add('hidden')
     main2.classList.remove('hidden')
     menu.classList.add('hiddenPhone')
+
+    main.classList.remove('hiddenPhone')
+    main2.classList.remove('hiddenPhone')
     hideAdminView()
 })
 

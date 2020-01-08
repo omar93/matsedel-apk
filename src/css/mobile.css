@@ -55,7 +55,6 @@
         border: none;
         display: flex;
         flex-direction: column;
-        z-index: -3;
         line-height: 20px;
     }
     .admin {display: none;}
