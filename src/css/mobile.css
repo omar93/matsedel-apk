@@ -109,4 +109,5 @@
 
     .hiddenPhone {display: none !important; }
     .hidden {display: none !important; }
+    .printText {display: none !important;}
 }

@@ -15,11 +15,13 @@ let main2 = document.querySelector('#main2')
 let thisWeek = document.querySelector('#thisWeek')
 let nextWeek = document.querySelector('#nextWeek')
 
-thisSpan.textContent = week.weekNumber()
+thisSpan.textContent = `Vecka: ${week.weekNumber()}`
 thisWeek.appendChild(thisSpan)
 
-nextSpan.textContent = week.weekNumber()+1
+nextSpan.textContent = `Vecka: ${week.weekNumber()+1}`
 nextWeek.appendChild(nextSpan)
+
+let printText = document.querySelector('.printText')
 
 // For mobile, toggles the menu section
 menuBtn.addEventListener('click', e => {
